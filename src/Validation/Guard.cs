@@ -209,16 +209,16 @@ namespace System
             }
 
             var chArray = source.ToCharArray();
-            var num1 = Convert.ToInt32(chArray[0].ToString()) * 10;
-            var num2 = Convert.ToInt32(chArray[1].ToString()) * 9;
-            var num3 = Convert.ToInt32(chArray[2].ToString()) * 8;
-            var num4 = Convert.ToInt32(chArray[3].ToString()) * 7;
-            var num5 = Convert.ToInt32(chArray[4].ToString()) * 6;
-            var num6 = Convert.ToInt32(chArray[5].ToString()) * 5;
-            var num7 = Convert.ToInt32(chArray[6].ToString()) * 4;
-            var num8 = Convert.ToInt32(chArray[7].ToString()) * 3;
-            var num9 = Convert.ToInt32(chArray[8].ToString()) * 2;
-            var lastNumber = Convert.ToInt32(chArray[9].ToString());
+            var num1 = int.Parse(chArray[0].ToString()) * 10;
+            var num2 = int.Parse(chArray[1].ToString()) * 9;
+            var num3 = int.Parse(chArray[2].ToString()) * 8;
+            var num4 = int.Parse(chArray[3].ToString()) * 7;
+            var num5 = int.Parse(chArray[4].ToString()) * 6;
+            var num6 = int.Parse(chArray[5].ToString()) * 5;
+            var num7 = int.Parse(chArray[6].ToString()) * 4;
+            var num8 = int.Parse(chArray[7].ToString()) * 3;
+            var num9 = int.Parse(chArray[8].ToString()) * 2;
+            var lastNumber = int.Parse(chArray[9].ToString());
 
             var sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
             var result = sum % 11;
@@ -251,7 +251,7 @@ namespace System
             {
                 return Regex.Match(text, pattern, RegexOptions.None, timeout).Success;
             }
-            catch (Exception)
+            catch
             {
                 return false;
             }
