@@ -43,6 +43,14 @@ namespace System
             }
         }
 
+        public static void Positive(decimal source, string name)
+        {
+            if (source <= 0)
+            {
+                throw new ArgumentException($"{name} must be greater than 0");
+            }
+        }
+
         public static void ContainsElement<T>(this IEnumerable<T> source, string name)
         {
             if (source == null || !source.Any())
