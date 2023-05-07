@@ -11,15 +11,10 @@ namespace Validation.Annotations
         {
             if (AllowDefaultValue && value == default)
                 return true;
-            
-            if (!(value is double s))
-            {
-                return false;
-            }
 
             try
             {
-                Guard.Positive(s, "Positive");
+                Guard.Positive(Convert.ToDecimal(value), "Positive");
                 return true;
             }
             catch
