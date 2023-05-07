@@ -5,16 +5,16 @@ namespace Validation.Annotations
 {
     public class ValidPositiveAttribute : ValidationAttribute
     {
+        public bool AllowDefaultValue { get; set; }
+
         public override bool IsValid(object value)
         {
-            if (!(value is double s))
-            {
-                return false;
-            }
+            if (AllowDefaultValue && value == default)
+                return true;
 
             try
             {
-                Guard.Positive(s, "Positive");
+                Guard.Positive(Convert.ToDecimal(value), "Positive");
                 return true;
             }
             catch
